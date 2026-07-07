@@ -554,8 +554,8 @@
   <tr>
     <td class="row-header">주요 기능</td>
     <td class="row-content">
-      ① AI 챗봇 24시간 수요자 맞춤 상담 &nbsp; ② 프로그램·시설 통합 검색 &nbsp; ③ 프로그램 예약<br>
-      ④ 바우처 간편결제 &nbsp; ⑤ 이용자 리뷰·피드백 &amp; 마일리지 적립 &nbsp; ⑥ 보조장비 허브 렌탈
+      ① AI 챗봇 24시간 수요자 맞춤 상담 &nbsp; ② 프로그램·시설 통합 검색 및 예약 &nbsp; ③ 바우처 간편결제<br>
+      ④ 이용자 리뷰·피드백 &amp; 마일리지 적립 &nbsp; ⑤ 보조장비 허브 렌탈
     </td>
   </tr>
   <tr>
@@ -602,6 +602,62 @@
 <p class="section-title">□ 주요 기능 UI 화면 구성</p>
 <div class="ui-grid">
 
+  <!-- 0 로그인·메인 화면 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="iphone-body" style="height:229px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0">
+          <!-- 앱 타이틀 -->
+          <div style="font-size:8.5pt;font-weight:900;color:#3A6B1A;letter-spacing:-0.5px;margin-bottom:1px">운동베프</div>
+          <div style="font-size:4.5pt;color:#8E8E93;margin-bottom:6px;text-align:center">장애인 스포츠 통합 플랫폼</div>
+          <!-- 반다비 픽셀 아트 -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 70" width="52" height="74" style="display:block">
+            <!-- 모자 스트라이프 -->
+            <rect x="16" y="1" width="16" height="4" rx="1" fill="#E53935"/>
+            <rect x="16" y="5" width="16" height="3" fill="#fff"/>
+            <rect x="16" y="8" width="16" height="3" fill="#1E88E5"/>
+            <rect x="16" y="11" width="16" height="3" fill="#43A047"/>
+            <!-- 모자 챙 -->
+            <rect x="10" y="13" width="28" height="5" rx="2" fill="#111827"/>
+            <!-- 귀 -->
+            <rect x="5" y="17" width="10" height="10" rx="5" fill="#0d0d1e"/>
+            <rect x="33" y="17" width="10" height="10" rx="5" fill="#0d0d1e"/>
+            <!-- 머리 -->
+            <rect x="8" y="17" width="32" height="28" rx="12" fill="#0d0d1e"/>
+            <!-- 얼굴 밝은 부분 -->
+            <ellipse cx="24" cy="36" rx="10" ry="8" fill="#263238"/>
+            <!-- 눈 (픽셀) -->
+            <rect x="13" y="27" width="7" height="7" rx="3.5" fill="#030712"/>
+            <rect x="28" y="27" width="7" height="7" rx="3.5" fill="#030712"/>
+            <!-- 눈 하이라이트 -->
+            <rect x="15" y="28" width="2" height="2" fill="#fff"/>
+            <rect x="30" y="28" width="2" height="2" fill="#fff"/>
+            <!-- 코 -->
+            <rect x="20" y="34" width="8" height="5" rx="2.5" fill="#030712"/>
+            <!-- 몸통 -->
+            <rect x="9" y="46" width="30" height="22" rx="11" fill="#0d0d1e"/>
+            <!-- 가슴 초승달 -->
+            <path d="M 15 56 Q 24 49 33 56 Q 29 67 15 56" fill="#fff"/>
+            <!-- 왼팔 (들어올림) -->
+            <rect x="0" y="36" width="8" height="18" rx="4" fill="#0d0d1e" transform="rotate(-38,4,45)"/>
+            <!-- 오른팔 -->
+            <rect x="40" y="47" width="8" height="16" rx="4" fill="#0d0d1e" transform="rotate(12,44,55)"/>
+          </svg>
+          <!-- 로그인 버튼 -->
+          <div style="margin-top:6px;width:82%;background:#5D8931;color:#fff;border-radius:9px;padding:5px;text-align:center;font-size:6pt;font-weight:700">시작하기</div>
+          <div style="margin-top:3px;font-size:4.3pt;color:#AEAEB2;text-align:center">장애인복지카드로 간편 인증</div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">⓪ 메인·로그인<br>화면</div>
+  </div>
+
   <!-- ① AI 챗봇 상담 -->
   <div class="iphone-wrap">
     <div class="iphone">
@@ -628,7 +684,7 @@
     <div class="iphone-label">① AI 챗봇<br>24시간 상담</div>
   </div>
 
-  <!-- ② 프로그램·시설 통합 검색 -->
+  <!-- ② 프로그램·시설 통합 검색 및 예약 -->
   <div class="iphone-wrap">
     <div class="iphone">
       <div class="iphone-screen">
@@ -637,7 +693,7 @@
           <span>9:41</span>
           <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
         </div>
-        <div class="app-bar">🔍 시설·프로그램 검색</div>
+        <div class="app-bar">🔍 시설·프로그램 검색 및 예약</div>
         <div class="iphone-body">
           <div class="ios-search">🔍 &nbsp;장애유형·지역·종목 검색</div>
           <div class="ios-segment">
@@ -662,52 +718,10 @@
         <div class="home-bar"><div class="home-pill"></div></div>
       </div>
     </div>
-    <div class="iphone-label">② 프로그램·시설<br>통합 검색</div>
+    <div class="iphone-label">② 프로그램·시설<br>통합 검색 및 예약</div>
   </div>
 
-  <!-- ③ 프로그램 예약 -->
-  <div class="iphone-wrap">
-    <div class="iphone">
-      <div class="iphone-screen">
-        <div class="dynamic-island"></div>
-        <div class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
-        </div>
-        <div class="app-bar">📋 프로그램 예약</div>
-        <div class="iphone-body">
-          <div class="ios-card" style="margin-bottom:4px">
-            <div class="ios-card-name">🏊 수중재활 프로그램</div>
-            <div class="ios-card-sub">반다비센터 강동 · 매주 화·목</div>
-          </div>
-          <div class="ios-cal">
-            <div class="ios-cal-hd">◀ &nbsp;2026년 7월&nbsp; ▶</div>
-            <div class="ios-cal-grid">
-              <span class="cg-lbl">일</span><span class="cg-lbl">월</span><span class="cg-lbl">화</span><span class="cg-lbl">수</span><span class="cg-lbl">목</span><span class="cg-lbl">금</span><span class="cg-lbl">토</span>
-              <span class="cg-d"></span><span class="cg-d"></span><span class="cg-d cg-dot">1</span><span class="cg-d">2</span><span class="cg-d cg-dot">3</span><span class="cg-d">4</span><span class="cg-d">5</span>
-              <span class="cg-d">6</span><span class="cg-d">7</span><span class="cg-d cg-dot">8</span><span class="cg-d">9</span><span class="cg-d cg-sel">10</span><span class="cg-d">11</span><span class="cg-d">12</span>
-            </div>
-          </div>
-          <div class="ios-timelist">
-            <div class="ios-time-row">
-              <div class="ios-radio on"></div>
-              <span>오전 10:00</span>
-              <span class="time-badge">선택됨</span>
-            </div>
-            <div class="ios-time-row">
-              <div class="ios-radio"></div>
-              <span>오후 02:00</span>
-            </div>
-          </div>
-          <div class="ios-btn">예약 확정</div>
-        </div>
-        <div class="home-bar"><div class="home-pill"></div></div>
-      </div>
-    </div>
-    <div class="iphone-label">③ 프로그램<br>예약</div>
-  </div>
-
-  <!-- ④ 바우처 간편결제 -->
+  <!-- ③ 바우처 간편결제 -->
   <div class="iphone-wrap">
     <div class="iphone">
       <div class="iphone-screen">
@@ -746,10 +760,10 @@
         <div class="home-bar"><div class="home-pill"></div></div>
       </div>
     </div>
-    <div class="iphone-label">④ 바우처<br>간편결제</div>
+    <div class="iphone-label">③ 바우처<br>간편결제</div>
   </div>
 
-  <!-- ⑤ 리뷰·마일리지 -->
+  <!-- ④ 리뷰·마일리지 -->
   <div class="iphone-wrap">
     <div class="iphone">
       <div class="iphone-screen">
@@ -775,10 +789,10 @@
         <div class="home-bar"><div class="home-pill"></div></div>
       </div>
     </div>
-    <div class="iphone-label">⑤ 이용자 리뷰·<br>마일리지 적립</div>
+    <div class="iphone-label">④ 이용자 리뷰·<br>마일리지 적립</div>
   </div>
 
-  <!-- ⑥ 보조장비 허브 렌탈 -->
+  <!-- ⑤ 보조장비 허브 렌탈 -->
   <div class="iphone-wrap">
     <div class="iphone">
       <div class="iphone-screen">
@@ -822,7 +836,7 @@
         <div class="home-bar"><div class="home-pill"></div></div>
       </div>
     </div>
-    <div class="iphone-label">⑥ 보조장비 허브<br>렌탈 서비스</div>
+    <div class="iphone-label">⑤ 보조장비 허브<br>렌탈 서비스</div>
   </div>
 
 </div><!-- /ui-grid -->
