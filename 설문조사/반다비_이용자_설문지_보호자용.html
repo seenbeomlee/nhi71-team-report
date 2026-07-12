@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>장애인 생활체육 이용 경험 설문조사 (보호자용)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 11mm 14mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: '함초롬바탕', 'HCR Batang', '바탕', 'Batang', '맑은 고딕', 'Malgun Gothic', serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000;
+    background: #fff;
+    width: 182mm;
+    margin: 0 auto;
+  }
+
+  @media screen {
+    body { padding: 15mm 0; }
+  }
+
+  .page2 { page-break-before: always; }
+
+  /* ── 상단 안내 ── */
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 9pt;
+    margin-bottom: 4px;
+  }
+
+  .id-box {
+    border: 1px solid #000;
+    padding: 2px 8px;
+    letter-spacing: 2px;
+  }
+
+  .confidential {
+    text-align: right;
+    line-height: 1.35;
+  }
+
+  /* ── 제목 (겹선 박스) ── */
+  .title-box {
+    border-top: 3px double #000;
+    border-bottom: 3px double #000;
+    text-align: center;
+    padding: 6px 0 5px;
+    margin-bottom: 7px;
+  }
+
+  .title-box h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .title-box .subtitle {
+    font-size: 10.5pt;
+    margin-top: 2px;
+  }
+
+  /* ── 인사말 ── */
+  .greeting {
+    border: 1px solid #000;
+    padding: 6px 10px;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    margin-bottom: 7px;
+  }
+
+  .greeting .org {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 3px;
+  }
+
+  /* ── 섹션 제목 ── */
+  .sec-title {
+    font-size: 11.5pt;
+    font-weight: bold;
+    margin: 7px 0 4px;
+  }
+
+  .sec-title .hint { font-weight: normal; font-size: 9.5pt; }
+
+  /* ── 표 공통 ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 4px 8px;
+    vertical-align: middle;
+  }
+
+  .basic td.label {
+    background: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    width: 34mm;
+  }
+
+  .basic td.opts { text-align: left; font-size: 10pt; }
+
+  /* ── 문항 블록 ── */
+  .group-title {
+    background: #e8e8e8;
+    border: 2.5px solid #000;
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 2px 10px;
+    margin-top: 7px;
+  }
+
+  .q-block { margin-top: 6px; }
+
+  .q-mc {
+    border: 1px solid #000;
+    padding: 5px 10px;
+    font-size: 10.2pt;
+    line-height: 1.5;
+  }
+
+  .q-mc .qno { font-weight: bold; }
+
+  .q-mc .choices {
+    display: block;
+    padding-left: 14px;
+    margin-top: 2px;
+  }
+
+  .q-answer {
+    border: 1px solid #000;
+    border-top: none;
+    padding: 4px 10px;
+    font-size: 9pt;
+    color: #666;
+  }
+
+  .h-20 { height: 20mm; }
+
+  /* ── 하단 ── */
+  .footer {
+    margin-top: 9px;
+    text-align: center;
+  }
+
+  .footer .thanks {
+    font-weight: bold;
+    font-size: 11.5pt;
+    letter-spacing: 1px;
+  }
+
+  .footer .contact {
+    font-size: 9pt;
+    color: #333;
+    margin-top: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ═══════════ 1쪽 ═══════════ -->
+
+  <div class="top-row">
+    <div class="id-box">ID&nbsp;&#9633;&#9633;&#9633;</div>
+    <div class="confidential">
+      본 설문의 응답 내용은 <b>익명으로 처리</b>되며,<br>
+      보고서 작성 이외의 목적으로 사용되지 않습니다.
+    </div>
+  </div>
+
+  <div class="title-box">
+    <h1>장애인 생활체육 이용 경험 설문조사</h1>
+    <div class="subtitle">— 반다비 체육센터 이용 장애인의 보호자용 —</div>
+  </div>
+
+  <div class="greeting">
+    안녕하십니까. 저희는 국가공무원인재개발원 신임관리자과정에서 교육 중인 신임 사무관들입니다.
+    본 설문은 교육과정 팀 실습으로 작성 중인 「장애인 생활체육 증진 방안」 정책보고서에
+    보호자 여러분의 의견을 반영하기 위한 것으로, <b>공식적인 실태조사가 아닌 교육용 설문</b>입니다.
+    소요 시간은 약 5분이며, 해당 번호에 &#10004; 표시해 주시면 됩니다. 감사합니다.
+    <div class="org">국가공무원인재개발원 제71기 신임관리자과정 정책기획 03팀</div>
+  </div>
+
+  <div class="sec-title">Ⅰ. 응답자 일반사항 <span class="hint">(해당 번호에 &#10004; 또는 O 표시)</span></div>
+
+  <table class="basic">
+    <tr>
+      <td class="label">가족(이용 장애인)의<br>장애 유형</td>
+      <td class="opts">&#9312; 지체 &nbsp; &#9313; 시각 &nbsp; &#9314; 청각 &nbsp; &#9315; 지적·자폐성 &nbsp; &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+    </tr>
+    <tr>
+      <td class="label">센터 이용 빈도</td>
+      <td class="opts">&#9312; 주 1회 이하 &nbsp; &#9313; 주 2~3회 &nbsp; &#9314; 주 4회 이상</td>
+    </tr>
+    <tr>
+      <td class="label">주 이동수단</td>
+      <td class="opts">&#9312; 자가용 &nbsp; &#9313; 대중교통 &nbsp; &#9314; 도보 &nbsp; &#9315; 장애인콜택시 등 특별교통수단 &nbsp; &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+    </tr>
+  </table>
+
+  <div class="sec-title">Ⅱ. 설문</div>
+
+  <div class="group-title" style="margin-top:0;">가. 이동 편의성 및 접근성</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">1.</span> 평소 집에서 센터까지 이동하실 때, 전반적인 이동 편의성은 어떠하십니까? <b>(하나만 선택)</b>
+      <span class="choices">&#9312; 매우 편리하다 &nbsp; &#9313; 약간 편리하다 &nbsp; &#9314; 보통이다 &nbsp; &#9315; 약간 불편하다 &nbsp; &#9316; 매우 불편하다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">2.</span> (1번에서 &#9315;·&#9316;을 고르신 경우) 이동 시 가장 큰 불편 요인은 무엇입니까? <b>(모두 선택 가능)</b>
+      <span class="choices">
+      &#9312; 대중교통(버스, 지하철 등) 연계 부족 및 긴 배차 간격<br>
+      &#9313; 셔틀버스 노선 미비 또는 운행 시간 불일치<br>
+      &#9314; 센터 주변 보도블록 파손, 턱, 경사로 등 보행 환경 열악<br>
+      &#9315; 장애인 콜택시 등 전용 교통수단 배차 대기 시간 과다<br>
+      &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">3.</span> 센터의 장애인 주차 공간 이용은 원활한 편입니까? <b>(하나만 선택)</b>
+      <span class="choices">
+      &#9312; 항상 주차 공간이 여유롭다<br>
+      &#9313; 대체로 주차할 수 있는 편이다<br>
+      &#9314; 시간대에 따라 혼잡하여 주차가 어려울 때가 있다<br>
+      &#9315; 주차 공간이 늘 부족하여 외부나 먼 곳에 주차한다<br>
+      &#9316; 차량을 이용하지 않는다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">4.</span> 휠체어 승하차나 거동이 불편한 가족을 안전하게 먼저 하차시킬 수 있는 '안전 승하차 구역(Drop-off Zone)'이 진입로 근처에 마련된다면, 이동 부담 경감에 도움이 되겠습니까? <b>(하나만 선택)</b>
+      <span class="choices">&#9312; 매우 도움이 될 것이다 &nbsp; &#9313; 약간 도움이 될 것이다 &nbsp; &#9314; 보통이다<br>&#9315; 별로 도움이 되지 않을 것이다 &nbsp; &#9316; 전혀 도움이 되지 않을 것이다</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ 2쪽 ═══════════ -->
+
+  <div class="page2">
+
+  <div class="group-title" style="margin-top:0;">나. 프로그램 이용 및 통합 체육</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">5.</span> 장애인과 비장애인이 함께 참여하는 '통합 체육 프로그램'이 개설된다면 참여할 의향이 있으십니까? <b>(하나만 선택)</b>
+      <span class="choices">
+      &#9312; 매우 참여하고 싶다 (&#9758; 5-1번으로) &nbsp; &#9313; 기회가 된다면 참여하고 싶다 (&#9758; 5-1번으로)<br>
+      &#9314; 보통이다 / 잘 모르겠다 (&#9758; 6번으로)<br>
+      &#9315; 별로 참여하고 싶지 않다 (&#9758; 5-2번으로) &nbsp; &#9316; 전혀 참여하고 싶지 않다 (&#9758; 5-2번으로)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">5-1.</span> (5번에서 &#9312;·&#9313;을 고르신 경우) 가장 희망하는 통합 체육 프로그램 형태는 무엇입니까? <b>(하나만 선택)</b>
+      <span class="choices">
+      &#9312; 보호자와 비장애인이 함께 참여하는 가족형 프로그램<br>
+      &#9313; 장애인과 비장애인이 1:1 매칭되어 운동하는 파트너형 프로그램<br>
+      &#9314; 장애·비장애 구분 없이 초보자 수준에 맞춘 수준별 강좌<br>
+      &#9315; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">5-2.</span> (5번에서 &#9315;·&#9316;을 고르신 경우) 참여를 망설이게 되는 가장 큰 이유는 무엇입니까? <b>(모두 선택 가능)</b>
+      <span class="choices">
+      &#9312; 비장애인 이용자의 시선이나 편견에 대한 우려<br>
+      &#9313; 장애인-비장애인 간 운동 능력 차이로 인한 수업 진도 부조화<br>
+      &#9314; 장애 특성을 깊이 이해하는 전문 지도자 부족에 대한 걱정<br>
+      &#9315; 안전사고 발생 가능성에 대한 우려<br>
+      &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="group-title">다. 센터 내부 시설</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">6.</span> 가족을 케어하실 때, 센터 내부 시설(화장실, 샤워실, 탈의실 등)에서 개선이 가장 시급하다고 느끼는 부분은 어디입니까? <b>(모두 선택 가능)</b>
+      <span class="choices">
+      &#9312; 동성 보호자가 동반하지 못할 때를 위한 '가족 화장실/가족 탈의실' 부족<br>
+      &#9313; 샤워실·탈의실 내 미끄럼 방지 시설 및 안전 손잡이 부족<br>
+      &#9314; 휠체어 회전 및 이동을 위한 내부 공간 협소<br>
+      &#9315; 장애 특성에 맞는 보조 기구(베드, 리프트 등) 미비<br>
+      &#9316; 전반적으로 만족함 / 개선 필요성 못 느낌</span>
+    </div>
+  </div>
+
+  <div class="group-title">라. 정보·이용</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">7.</span> 프로그램이나 지원제도 정보를 어디서 찾아야 할지 몰라 어려움을 겪은 적이 있으십니까? <b>(하나만 선택)</b>
+      <span class="choices">&#9312; 자주 있다 &nbsp; &#9313; 가끔 있다 &nbsp; &#9314; 거의 없다 &nbsp; &#9315; 전혀 없다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">8.</span> 스포츠강좌이용권(바우처)의 결제 과정은 어떠하십니까? <b>(하나만 선택)</b>
+      <span class="choices">&#9312; 매우 불편하다 &nbsp; &#9313; 약간 불편하다 &nbsp; &#9314; 보통이다 &nbsp; &#9315; 편리하다 &nbsp; &#9316; 이용해 본 적 없다</span>
+    </div>
+  </div>
+
+  <div class="sec-title">Ⅲ. 자유 의견</div>
+
+  <div class="q-block" style="margin-top:0;">
+    <div class="q-mc">
+      <span class="qno">9.</span> 가족과 함께 센터를 이용하시면서 <b>가장 불편했던 점 한 가지</b>를 자유롭게 적어 주세요.
+    </div>
+    <div class="q-answer h-20"></div>
+  </div>
+
+  <div class="footer">
+    <div class="thanks">— 설문에 응답해 주셔서 진심으로 감사합니다 —</div>
+    <div class="contact">주신 의견은 장애인 생활체육 정책 개선 방안을 담은 교육용 정책보고서에 반영됩니다.</div>
+  </div>
+
+  </div>
+
+</body>
+</html>
