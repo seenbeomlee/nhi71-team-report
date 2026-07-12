@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>장애인 스포츠지도자 설문지</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 11mm 14mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: '함초롬바탕', 'HCR Batang', '바탕', 'Batang', '맑은 고딕', 'Malgun Gothic', serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000;
+    background: #fff;
+    width: 182mm;
+    margin: 0 auto;
+  }
+
+  @media screen {
+    body { padding: 15mm 0; }
+  }
+
+  .page2 { page-break-before: always; }
+
+  /* ── 상단 안내 ── */
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 9pt;
+    margin-bottom: 4px;
+  }
+
+  .id-box {
+    border: 1px solid #000;
+    padding: 2px 8px;
+    letter-spacing: 2px;
+  }
+
+  .confidential {
+    text-align: right;
+    line-height: 1.35;
+  }
+
+  /* ── 제목 (겹선 박스) ── */
+  .title-box {
+    border-top: 3px double #000;
+    border-bottom: 3px double #000;
+    text-align: center;
+    padding: 6px 0 5px;
+    margin-bottom: 7px;
+  }
+
+  .title-box h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .title-box .subtitle {
+    font-size: 10.5pt;
+    margin-top: 2px;
+  }
+
+  /* ── 인사말 ── */
+  .greeting {
+    border: 1px solid #000;
+    padding: 5px 10px;
+    font-size: 9.3pt;
+    line-height: 1.45;
+    margin-bottom: 6px;
+  }
+
+  .greeting .org {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 3px;
+  }
+
+  /* ── 섹션 제목 ── */
+  .sec-title {
+    font-size: 11.5pt;
+    font-weight: bold;
+    margin: 5px 0 3px;
+  }
+
+  .sec-title .hint { font-weight: normal; font-size: 9.5pt; }
+
+  /* ── 표 공통 ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 3px 8px;
+    vertical-align: middle;
+  }
+
+  .basic td.label {
+    background: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    width: 28mm;
+  }
+
+  .basic td.opts { text-align: left; font-size: 10pt; }
+
+  /* ── 문항 블록 ── */
+  .group-title {
+    background: #e8e8e8;
+    border: 2.5px solid #000;
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 2px 10px;
+    margin-top: 6px;
+  }
+
+  .q-block { margin-top: 4px; }
+
+  .q-mc {
+    border: 1px solid #000;
+    padding: 4px 10px;
+    font-size: 10.2pt;
+    line-height: 1.5;
+  }
+
+  .q-mc .qno { font-weight: bold; }
+
+  .q-mc .choices {
+    display: block;
+    padding-left: 14px;
+    margin-top: 2px;
+  }
+
+  .q-mc .cond {
+    display: block;
+    font-size: 9.2pt;
+    color: #333;
+  }
+
+  .q-answer {
+    border: 1px solid #000;
+    border-top: none;
+    padding: 4px 10px;
+    font-size: 9pt;
+    color: #666;
+  }
+
+  .h-14 { height: 14mm; }
+  .h-16 { height: 16mm; }
+  .h-24 { height: 26mm; }
+
+  /* ── 하단 ── */
+  .footer {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .footer .thanks {
+    font-weight: bold;
+    font-size: 11.5pt;
+    letter-spacing: 1px;
+  }
+
+  .footer .contact {
+    font-size: 9pt;
+    color: #333;
+    margin-top: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ═══════════ 1쪽 ═══════════ -->
+
+  <div class="top-row">
+    <div class="id-box">ID&nbsp;&#9633;&#9633;&#9633;</div>
+    <div class="confidential">
+      본 설문지의 응답 내용은 <b>익명으로 처리</b>되며, 센터·소속 기관에<br>
+      개별적으로 공유되지 않고 보고서 작성 이외의 목적으로 사용되지 않습니다.
+    </div>
+  </div>
+
+  <div class="title-box">
+    <h1>장애인 스포츠지도자 설문지</h1>
+    <div class="subtitle">— 반다비 체육센터 장애인 스포츠지도자 대상 —</div>
+  </div>
+
+  <div class="greeting">
+    안녕하십니까. 저희는 국가공무원인재개발원 신임관리자과정에서 교육 중인 신임 사무관들입니다.
+    본 설문지는 교육과정 팀 실습으로 작성 중인 「장애인 생활체육 증진 방안」 정책보고서에
+    현장 지도자 여러분의 의견을 반영하기 위한 것으로, <b>공식적인 실태조사가 아닌 교육용 설문지</b>입니다.
+    해당 번호에 &#10004; 표시해 주시고, 서술 문항은 자유롭게 적어 주시면 됩니다.
+    <b>일부 문항만 답변하셔도 좋습니다.</b> 감사합니다.
+    <div class="org">국가공무원인재개발원 제71기 신임관리자과정 정책기획 03팀</div>
+  </div>
+
+  <div class="sec-title">Ⅰ. 기본 정보</div>
+
+  <table class="basic">
+    <tr>
+      <td class="label">지도 경력</td>
+      <td class="opts">약 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)년</td>
+    </tr>
+    <tr>
+      <td class="label">보유 자격</td>
+      <td class="opts">&#9312; 장애인스포츠지도사 1급 &nbsp; &#9313; 장애인스포츠지도사 2급<br>&#9314; 그 외 스포츠지도사 자격 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+    </tr>
+    <tr>
+      <td class="label">고용 형태</td>
+      <td class="opts">&#9312; 정규직 &nbsp; &#9313; 계약직 &nbsp; &#9314; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</td>
+    </tr>
+  </table>
+
+  <div class="sec-title">Ⅱ. 설문</div>
+
+  <div class="group-title">가. 지원·채용</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">1.</span> 장애인 스포츠지도자에 지원하실 때 어려웠던 점은 무엇인가요? <b>(해당하는 것에 모두 &#10004;)</b>
+      <span class="choices">&#9312; 지원 경로가 복잡함 &nbsp; &#9313; 채용 정보를 찾기 어려움 &nbsp; &#9314; 거주지 기준으로 인해 지원이 어려움<br>
+      &#9315; 채용 시기가 일정하지 않고 공고 기간이 짧음 &nbsp; &#9316; 어려움 없었음 &nbsp; &#9317; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="group-title">나. 근무 여건</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">2.</span> 현재 주당 몇 개의 수업(프로그램)을 담당하고 계신가요?
+      <span class="choices">&#9312; 5개 이하 &nbsp; &#9313; 6~10개 &nbsp; &#9314; 11~15개 &nbsp; &#9315; 16개 이상</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">3.</span> 지도 인력이 부족하다고 느끼신 적이 있나요?
+      <span class="choices">&#9312; 있다 &nbsp; &#9313; 없다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">3-1.</span> 3번에서 '&#9312; 있다'를 선택하신 경우, 인력이 부족하다고 느끼신 구체적인 경험을 적어 주세요.
+    </div>
+    <div class="q-answer h-14">(답변)</div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">4.</span> 재계약이 안정적으로 보장되고 있다고 느끼시나요?
+      <span class="choices">&#9312; 그렇다 &nbsp; &#9313; 그렇지 않다 &nbsp; &#9314; 해당 없음(정규직 등)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">4-1.</span> 4번에서 '&#9313; 그렇지 않다'를 선택하신 경우, 재계약 과정에서 개선이 필요하다고 느끼신 점을 적어 주세요.
+    </div>
+    <div class="q-answer h-14">(답변)</div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">5.</span> 특수수당 등 성과급 요소를 도입한다면 어떤 기준으로 평가받는 것이 합리적이라고 생각하시나요? <b>(해당하는 것에 모두 &#10004;)</b>
+      <span class="choices">&#9312; 수업 진행 횟수 &nbsp; &#9313; 참여자 만족도 &nbsp; &#9314; 신규 프로그램 개발 &nbsp; &#9315; 자격·연수 이수<br>
+      &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ 2쪽 ═══════════ -->
+
+  <div class="page2">
+
+  <div class="group-title" style="margin-top:0;">다. 인력 배치</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">6.</span> 만약 지도자를 광역 단위로 선발하여 순환 배치하거나 순회 지도를 하게 된다면 어떻게 생각하시나요?
+      <span class="choices">&#9312; 만족 &nbsp; &#9313; 불만족 &nbsp; &#9314; 기타 의견 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">6-1.</span> 6번에서 '&#9313; 불만족'을 선택하신 경우, 어떤 점이 우려되는지 간단히 적어 주세요.
+    </div>
+    <div class="q-answer h-14">(답변)</div>
+  </div>
+
+  <div class="group-title">라. 전문성·교육</div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">7.</span> 어떤 장애 유형을 지도하실 때 어려움을 겪으시나요? <b>(해당하는 것에 모두 &#10004;)</b>
+      <span class="choices">&#9312; 지적·자폐성 &nbsp; &#9313; 시각 &nbsp; &#9314; 지체 &nbsp; &#9315; 청각 &nbsp; &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">8.</span> 7번의 어려움과 관련하여, 정부의 지원이 가장 필요한 것은 무엇이라고 생각하시나요?
+      <span class="choices">&#9312; 장애유형별 심화 교육 &nbsp; &#9313; 보조인력 &nbsp; &#9314; 맞춤 장비 &nbsp; &#9315; 운영비 지원 &nbsp; &#9316; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">9.</span> 장애인스포츠지도사 자격 취득 시 받으신 연수는 현장에서 필요한 역량을 갖추기에 충분했나요?
+      <span class="choices">&#9312; 충분했다 &nbsp; &#9313; 부족했다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">9-1.</span> 9번에서 '&#9313; 부족했다'를 선택하신 경우, 어느 쪽이 더 시급하다고 보시나요?
+      <span class="choices">&#9312; 연수 시간 연장 &nbsp; &#9313; 내용 재구성(현장실습 확대, 장애유형별 심화 등) &nbsp; &#9314; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">10.</span> 자격 취득 후 역량강화(보수) 교육을 받아보신 적이 있나요?
+      <span class="choices">&#9312; 있다 (연간 약 &nbsp;&nbsp;&nbsp;&nbsp;회) &nbsp; &#9313; 없다</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">10-1.</span> 역량강화(보수) 교육이 전국적으로 표준화·의무화된다면 꼭 포함되어야 할 내용을 간단히 적어 주세요.
+    </div>
+    <div class="q-answer h-16">(답변)</div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">11.</span> 타 스포츠지도사 자격 보유자가 장애인 지도 교육을 이수하면 장애인스포츠지도사 자격을 취득할 수 있도록 연계하는 방안에 대해 어떻게 생각하시나요?
+      <span class="choices">&#9312; 찬성 &nbsp; &#9313; 반대 &nbsp; &#9314; 기타 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">11-1.</span> 11번에서 그렇게 생각하신 이유를 간단히 적어 주세요.
+    </div>
+    <div class="q-answer h-16">(답변)</div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-mc">
+      <span class="qno">12.</span> 그 밖에 지도자 처우·교육과 관련하여 하고 싶으신 말씀을 자유롭게 적어 주세요.
+    </div>
+    <div class="q-answer h-24">(답변)</div>
+  </div>
+
+  <div class="footer">
+    <div class="thanks">— 설문에 답해 주셔서 진심으로 감사합니다 —</div>
+    <div class="contact">주신 의견은 장애인 생활체육 지도 인력의 처우와 전문성 개선 방안을 담은 교육용 정책보고서에 반영됩니다.</div>
+  </div>
+
+  </div>
+
+</body>
+</html>
