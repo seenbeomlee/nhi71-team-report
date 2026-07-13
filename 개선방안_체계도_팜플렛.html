@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ⅲ. 개선방안 — 장애인 생활체육 증진 방안 체계도</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 7mm 8mm;
+  }
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  :root {
+    --deep: #1e4634;        /* 최심 초록 */
+    --green: #2e6b4f;       /* 주 초록 */
+    --g1: #5b8a4e;          /* 전략1 — 인프라 */
+    --g2: #2f7d68;          /* 전략2 — 프로그램 */
+    --g3: #2b5566;          /* 전략3 — 관리 */
+    --olive: #97a97c;
+    --olive-d: #6f8256;
+    --label-a: #6b7d67;
+    --label-b: #93a08d;
+    --gold: #f2d878;
+    --paper: #f4f8f3;
+  }
+
+  body {
+    font-family: '휴먼명조', 'Humanmyeongjo', 'HCR Batang', '함초롬바탕', 'Nanum Myeongjo', 'NanumMyeongjo', '바탕', 'Batang', serif;
+    width: 194mm;
+    height: 280mm;
+    margin: 0 auto;
+    color: #1a1a1a;
+    font-size: 8.8pt;
+    line-height: 1.38;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen { body { margin: 10mm auto; } }
+
+  /* ── 상단 장 제목 바 ── */
+  .chapter {
+    background: linear-gradient(90deg, var(--deep) 0%, #2e6b4f 55%, #4e8a63 100%);
+    color: #fff;
+    font-size: 15pt;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 2.4mm 4mm;
+    margin-bottom: 3mm;
+    border-radius: 1mm;
+    box-shadow: 0 1mm 2mm rgba(30,70,52,.28);
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter::after {
+    content: '';
+    position: absolute;
+    right: -6mm; top: -8mm;
+    width: 34mm; height: 34mm;
+    background: radial-gradient(circle, rgba(255,255,255,.16), rgba(255,255,255,0) 68%);
+  }
+
+  /* ── 행 공통: 좌측 라벨 + 우측 내용 ── */
+  .row {
+    display: flex;
+    gap: 2.5mm;
+    margin-bottom: 2.6mm;
+  }
+  .r-vision { flex: 2 1 0; }
+  .r-goal   { flex: 3.6 1 0; }
+  .r-strat  { flex: 3.1 1 0; }
+  .r-task   { flex: 9.5 1 0; }
+  .r-sys    { flex: 4 1 0; }
+
+  .row-label {
+    flex: 0 0 15mm;
+    background: linear-gradient(160deg, var(--label-b) 0%, var(--label-a) 100%);
+    color: #fff;
+    font-size: 11pt;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    padding: 1.5mm 1mm;
+    border-radius: 1mm;
+    box-shadow: inset 0 0 0 .4mm rgba(255,255,255,.25), 0 .6mm 1.4mm rgba(0,0,0,.18);
+  }
+  .row-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+  /* ── 비전 ── */
+  .vision-box {
+    border: 1.4px solid #3a5a48;
+    outline: .35mm solid #cdddd2;
+    outline-offset: -1.6mm;
+    background:
+      radial-gradient(ellipse at 8% 110%, rgba(151,169,124,.18), transparent 42%),
+      radial-gradient(ellipse at 94% -10%, rgba(46,107,79,.14), transparent 45%),
+      #fff;
+    text-align: center;
+    padding: 3.6mm 2mm;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1mm;
+    box-shadow: 0 .8mm 1.8mm rgba(0,0,0,.10);
+  }
+  .vision-box h1 {
+    font-size: 20.5pt;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #222;
+    position: relative;
+    z-index: 0;
+  }
+  .vision-box h1 .hl {
+    color: var(--green);
+    position: relative;
+  }
+  .vision-box h1 .hl::before {
+    content: '';
+    position: absolute;
+    left: -3%; right: -3%;
+    bottom: -14%;
+    height: 46%;
+    background: radial-gradient(ellipse 55% 90% at 50% 50%, var(--gold) 0%, rgba(242,216,120,.55) 55%, rgba(242,216,120,0) 100%);
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  /* ── 목표 ── */
+  .goal-box {
+    border: 1.4px solid #3a5a48;
+    background: linear-gradient(180deg, #fdfefd 0%, var(--paper) 100%);
+    padding: 2.6mm 4.5mm 2.2mm;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 1mm;
+    box-shadow: 0 .8mm 1.8mm rgba(0,0,0,.10);
+  }
+  .g-line {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+  }
+  .g-badge {
+    flex: 0 0 5.4mm;
+    height: 5.4mm;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #3e7a5c, var(--deep));
+    color: #fff;
+    font-size: 9pt;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .4mm 1mm rgba(30,70,52,.35);
+  }
+  .g-num {
+    text-align: center;
+    margin: .8mm 0 0 7.6mm;
+  }
+  .g-num span {
+    display: inline-block;
+    background: #e7f0e6;
+    border: .3mm solid #b9d2bb;
+    border-radius: 6mm;
+    color: var(--deep);
+    font-size: 10.5pt;
+    font-weight: 800;
+    padding: .5mm 6mm;
+  }
+  .g-num .arrow { color: #b03a2e; }
+
+  /* ── 추진전략 ── */
+  .strat-top {
+    background: linear-gradient(90deg, var(--deep), #35745a);
+    color: #fff;
+    text-align: center;
+    font-size: 12.5pt;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 1.2mm;
+    padding: 2.2mm 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .8mm 1.6mm rgba(30,70,52,.3);
+  }
+  .strat-funnel {
+    height: 3.4mm;
+    margin: 0 14mm;
+    background: linear-gradient(180deg, rgba(46,107,79,.45), rgba(46,107,79,.08));
+    clip-path: polygon(28% 0, 72% 0, 100% 100%, 0 100%);
+  }
+  .strat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2mm;
+    flex: 1.15;
+  }
+  .strat-cell {
+    color: #fff;
+    text-align: center;
+    font-size: 10.5pt;
+    font-weight: 800;
+    border-radius: 1.2mm;
+    padding: 1.8mm 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .8mm 1.6mm rgba(0,0,0,.22);
+    position: relative;
+    overflow: hidden;
+  }
+  .strat-cell::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0));
+  }
+  .strat-cell small {
+    display: block;
+    font-size: 7.4pt;
+    font-weight: 600;
+    opacity: .92;
+    margin-top: .4mm;
+    letter-spacing: .3px;
+  }
+  .strat-cell.c1 { background: linear-gradient(150deg, #6d9c5e, var(--g1)); }
+  .strat-cell.c2 { background: linear-gradient(150deg, #3d947c, var(--g2)); }
+  .strat-cell.c3 { background: linear-gradient(150deg, #3a6d82, var(--g3)); }
+
+  /* ── 세부추진과제 ── */
+  .group {
+    display: flex;
+    gap: 1.8mm;
+    margin-bottom: 1.8mm;
+    flex: 1;
+  }
+  .group:last-child { margin-bottom: 0; }
+  .group-label {
+    flex: 0 0 7.5mm;
+    border-radius: 1mm;
+    color: #fff;
+    font-size: 8.6pt;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.25;
+    text-align: center;
+    padding: 1mm 0;
+    box-shadow: 0 .5mm 1.2mm rgba(0,0,0,.2);
+  }
+  .group-label span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 1.5px;
+  }
+  .grp1 .group-label { background: linear-gradient(180deg, #6d9c5e, var(--g1)); }
+  .grp2 .group-label { background: linear-gradient(180deg, #3d947c, var(--g2)); }
+  .grp3 .group-label { background: linear-gradient(180deg, #3a6d82, var(--g3)); }
+
+  .group-tasks {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.8mm;
+  }
+  .task {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1mm;
+    overflow: hidden;
+    box-shadow: 0 .6mm 1.4mm rgba(0,0,0,.14);
+  }
+  .task-head {
+    color: #fff;
+    text-align: center;
+    font-size: 9.2pt;
+    font-weight: 800;
+    padding: 1.2mm 1mm;
+    letter-spacing: .5px;
+  }
+  .grp1 .task-head { background: linear-gradient(90deg, var(--g1), #6d9c5e); }
+  .grp2 .task-head { background: linear-gradient(90deg, var(--g2), #3d947c); }
+  .grp3 .task-head { background: linear-gradient(90deg, var(--g3), #3a6d82); }
+
+  .task-body {
+    border: 1px solid #c5d4c4;
+    border-top: none;
+    background: linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+    padding: 1.5mm 1.9mm;
+    flex: 1;
+  }
+  .task-body ul { list-style: none; }
+  .task-body li {
+    font-size: 7.6pt;
+    color: #222;
+    padding-left: 2.6mm;
+    position: relative;
+    margin-bottom: .6mm;
+  }
+  .task-body li:last-child { margin-bottom: 0; }
+  .task-body li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    font-size: 7pt;
+  }
+  .grp1 .task-body li::before { color: var(--g1); }
+  .grp2 .task-body li::before { color: var(--g2); }
+  .grp3 .task-body li::before { color: var(--g3); }
+
+  /* ── 추진체계 ── */
+  .system {
+    display: grid;
+    grid-template-columns: 1fr 1.06fr 0.94fr;
+    gap: 2mm;
+    flex: 1;
+  }
+  .sys {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1mm;
+    overflow: hidden;
+    box-shadow: 0 .6mm 1.4mm rgba(0,0,0,.16);
+  }
+  .sys-head {
+    background: linear-gradient(90deg, var(--olive-d), var(--olive));
+    color: #fff;
+    text-align: center;
+    font-size: 10.5pt;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 1.4mm 0;
+  }
+  .sys-head .icon { letter-spacing: 0; margin-right: 1.5mm; }
+  .sys-body {
+    border: 1px solid #c3cbaa;
+    border-top: none;
+    background: linear-gradient(180deg, #fff 0%, #f5f7ee 100%);
+    padding: 1.7mm 2.1mm;
+    flex: 1;
+  }
+  .sys-body ul { list-style: none; }
+  .sys-body li {
+    font-size: 7.6pt;
+    color: #222;
+    padding-left: 2.4mm;
+    position: relative;
+    margin-bottom: .7mm;
+  }
+  .sys-body li:last-child { margin-bottom: 0; }
+  .sys-body li::before {
+    content: '-';
+    position: absolute; left: 0;
+    color: var(--olive-d);
+    font-weight: 800;
+  }
+  .sys-body li.indent { padding-left: 4.8mm; }
+  .sys-body li.indent::before { content: '·'; left: 2.6mm; }
+  .sys-body strong { font-weight: 800; color: #14301f; }
+</style>
+</head>
+<body>
+
+<div class="chapter">Ⅲ. 개선방안</div>
+
+<!-- 비전 -->
+<div class="row r-vision">
+  <div class="row-label">비전</div>
+  <div class="row-body">
+    <div class="vision-box">
+      <h1>차별 없이 <span class="hl">모두가 함께</span> 즐기는 생활체육</h1>
+    </div>
+  </div>
+</div>
+
+<!-- 목표 -->
+<div class="row r-goal">
+  <div class="row-label">목표</div>
+  <div class="row-body">
+    <div class="goal-box">
+      <div>
+        <div class="g-line"><span class="g-badge">1</span>장애인 생활체육 참여율 제고로 국정과제 목표 달성</div>
+        <div class="g-num"><span>34.8%('25) <span class="arrow">→</span> 40%('30)</span></div>
+      </div>
+      <div>
+        <div class="g-line"><span class="g-badge">2</span>생활권 어디서나 이용 가능한 장애인 친화 체육 인프라 완성</div>
+        <div class="g-num"><span>반다비 체육센터 150개소 착공 결정('27 누적)</span></div>
+      </div>
+      <div>
+        <div class="g-line"><span class="g-badge">3</span>정보 탐색부터 참여·환류까지 원스톱 지원체계 구축 — (가칭)「운동베프」</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 추진전략 -->
+<div class="row r-strat">
+  <div class="row-label">추진<br>전략</div>
+  <div class="row-body">
+    <div class="strat-top">수요자 중심 장애인 생활체육 생태계 조성</div>
+    <div class="strat-funnel"></div>
+    <div class="strat-row">
+      <div class="strat-cell c1">인프라 확충<small>어디서나 — 시설·접근·환경</small></div>
+      <div class="strat-cell c2">프로그램 다변화<small>누구나 — 수요·인력·통합</small></div>
+      <div class="strat-cell c3">관리 고도화<small>끊김없이 — 정보·운영</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- 세부추진과제 -->
+<div class="row r-task">
+  <div class="row-label">세부<br>추진<br>과제</div>
+  <div class="row-body">
+
+    <div class="group grp1">
+      <div class="group-label"><span>인프라</span></div>
+      <div class="group-tasks">
+        <div class="task">
+          <div class="task-head">시설·장비 확충</div>
+          <div class="task-body">
+            <ul>
+              <li>민·관 체육시설 개방 및 인센티브 제공</li>
+              <li>반다비 국비 지원 정액제 → 비율제 전환</li>
+              <li>광역별 보조장비 렌탈 허브 운영</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">접근성 제고</div>
+          <div class="task-body">
+            <ul>
+              <li>선정기준 내 대중교통 접근성 배점 신설</li>
+              <li>수요응답형(DRT) 셔틀버스 지원</li>
+              <li>승하차 구역(Drop-Off Zone) 도입</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">무장애 환경 개선</div>
+          <div class="task-body">
+            <ul>
+              <li>BF 미충족 노후시설 개·보수 국비 우선 배정</li>
+              <li>도심형 무장애 생활체육 광장 시범 조성</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group grp2">
+      <div class="group-label"><span>프로그램</span></div>
+      <div class="group-tasks">
+        <div class="task">
+          <div class="task-head">수요 맞춤</div>
+          <div class="task-body">
+            <ul>
+              <li>장애유형·정도별 맞춤 프로그램 개발</li>
+              <li>비대면·AI 코칭 및 방문지도 서비스</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">인력 확충</div>
+          <div class="task-body">
+            <ul>
+              <li>특수수당 신설·재계약 지침 표준화</li>
+              <li>광역 선발 후 순환 배치·순회 지도</li>
+              <li>장애유형별 심화연수 이수 의무화</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">어울림 통합</div>
+          <div class="task-body">
+            <ul>
+              <li>(가칭)운동베프축제·어울림 콘텐츠 공모전</li>
+              <li>통합 동호회 인센티브(이용료 감면·바우처)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="group grp3">
+      <div class="group-label"><span>관리</span></div>
+      <div class="group-tasks">
+        <div class="task">
+          <div class="task-head">정보 접근성</div>
+          <div class="task-body">
+            <ul>
+              <li>(가칭)「운동베프」 원스톱 플랫폼 구축</li>
+              <li>공익광고·뉴미디어 BF 점검표 제정</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">바우처 편의</div>
+          <div class="task-body">
+            <ul>
+              <li>플랫폼 내 바우처 간편결제 시스템</li>
+              <li>오프라인 현장 결제 창구 병행</li>
+            </ul>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-head">운영·환류</div>
+          <div class="task-body">
+            <ul>
+              <li>운영비 지원 근거 마련·조건부 인센티브</li>
+              <li>리뷰 마일리지 기반 환류 체계</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 추진체계 -->
+<div class="row r-sys" style="margin-bottom:0">
+  <div class="row-label">추진<br>체계</div>
+  <div class="row-body">
+    <div class="system">
+      <div class="sys">
+        <div class="sys-head"><span class="icon">⚖</span>법</div>
+        <div class="sys-body">
+          <ul>
+            <li><strong>「장애인생활체육진흥법(안)」 제정</strong></li>
+            <li>「국민체육진흥법」 일부개정</li>
+            <li class="indent">반다비 국비 보조율 위임 조항 신설(비율제)</li>
+            <li>「보조금 관리에 관한 법률 시행령」 일부개정</li>
+            <li class="indent">별표2 65호 삭제 — 운영비 지원 근거</li>
+            <li>장비 표준규격·운영비 인센티브 고시 제정</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sys">
+        <div class="sys-head"><span class="icon">🏛</span>조직</div>
+        <div class="sys-body">
+          <ul>
+            <li>(총괄기관) <strong>문화체육관광부</strong></li>
+            <li>(통합지원기관)</li>
+            <li class="indent">국민체육진흥공단</li>
+            <li class="indent">대한장애인체육회</li>
+            <li>(사업수행기관) 지자체, 반다비 체육센터</li>
+            <li>(협력) 복지부(국립재활원)·행안부·한국교통안전공단</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sys">
+        <div class="sys-head"><span class="icon">₩</span>예산</div>
+        <div class="sys-body">
+          <ul>
+            <li>건립비: 국비 <strong>총사업비 연동 비율제</strong> + 지방비 매칭</li>
+            <li>운영비: 장애인 이용률 연동 <strong>조건부 인센티브</strong></li>
+            <li>산출근거: 행안부 인건비 기준단가, SW사업 대가산정(FP방식)</li>
+            <li>5개년 중기재정 — 성과목표·예산 연동</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
