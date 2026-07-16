@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>14분임 예산 대응 — 발표카드 (A4 2장)</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Malgun Gothic","Apple SD Gothic Neo","Nanum Gothic",sans-serif; color:#1a1a1a; font-size:11px; line-height:1.45; }
+  .page { width:190mm; min-height:272mm; padding:6mm 4mm; page-break-after:always; position:relative; }
+  .page:last-child { page-break-after:auto; }
+  h1 { font-size:19px; color:#0b3d66; border-bottom:3px solid #0b3d66; padding-bottom:5px; margin-bottom:4px; }
+  .sub { font-size:11px; color:#555; margin-bottom:12px; }
+  h2 { font-size:13px; color:#0b3d66; margin:14px 0 7px; padding-left:7px; border-left:5px solid #2a7ab8; }
+  .lane-label { font-size:11px; font-weight:bold; color:#444; margin:2px 0 5px; }
+
+  /* existing pipeline */
+  .pipe { display:flex; align-items:stretch; gap:0; margin-bottom:6px; }
+  .pbox { flex:1; background:#eef4fa; border:1.5px solid #7aa7cc; border-radius:6px; padding:7px 6px; text-align:center; }
+  .pbox .t { font-weight:bold; font-size:11px; color:#0b3d66; }
+  .pbox .d { font-size:9.5px; color:#444; margin-top:3px; }
+  .pbox .yr { font-size:8.5px; color:#888; margin-top:2px; }
+  .arrow { display:flex; align-items:center; font-size:18px; color:#7aa7cc; padding:0 3px; font-weight:bold; }
+
+  .downnote { text-align:center; font-weight:bold; color:#c0392b; font-size:12px; margin:10px 0 8px; }
+
+  /* 14분임 boxes */
+  .grid4 { display:flex; gap:7px; }
+  .nbox { flex:1; border-radius:6px; padding:8px 7px; border:2px solid; }
+  .nbox .t { font-weight:bold; font-size:11px; }
+  .nbox .bud { font-size:10px; font-weight:bold; margin:3px 0; }
+  .nbox .ov { font-size:9px; margin-top:4px; padding-top:4px; border-top:1px dashed #aaa; }
+  .dup { background:#fdecea; border-color:#e0503a; }
+  .dup .t, .dup .bud { color:#b5301a; }
+  .part { background:#fff6e0; border-color:#e0a800; }
+  .part .t, .part .bud { color:#a97a00; }
+  .new { background:#e8f7ee; border-color:#2ea560; }
+  .new .t, .new .bud { color:#1d7a44; }
+
+  .legend { display:flex; gap:14px; font-size:9.5px; margin:8px 0; }
+  .legend span { display:inline-flex; align-items:center; gap:4px; }
+  .chip { width:11px; height:11px; border-radius:3px; display:inline-block; border:1.5px solid; }
+
+  .keybox { margin-top:12px; background:#0b3d66; color:#fff; border-radius:7px; padding:11px 13px; }
+  .keybox b { color:#ffd85e; }
+  .keybox .h { font-size:12px; font-weight:bold; margin-bottom:5px; }
+
+  /* page 2 questions */
+  .q { border:2px solid; border-radius:8px; padding:10px 12px; margin-bottom:11px; }
+  .q1 { border-color:#2a7ab8; background:#f2f8fc; }
+  .q2 { border-color:#c0392b; background:#fdf3f2; }
+  .q .tag { display:inline-block; font-size:10px; font-weight:bold; color:#fff; border-radius:4px; padding:2px 8px; margin-bottom:5px; }
+  .q1 .tag { background:#2a7ab8; }
+  .q2 .tag { background:#c0392b; }
+  .q .say { font-size:11px; background:#fff; border:1px solid #ccc; border-radius:5px; padding:8px 9px; margin:5px 0; }
+  .q .why { font-size:10px; color:#444; margin:4px 0; }
+  .q .reb { font-size:10px; color:#333; background:#fff; border-left:3px solid #999; padding:4px 8px; margin-top:4px; }
+  .combo { text-align:center; background:#0b3d66; color:#fff; border-radius:7px; padding:8px 10px; font-size:11px; margin:8px 0 12px; }
+  .combo b { color:#ffd85e; }
+  .spare { border:1.5px dashed #999; border-radius:7px; padding:8px 11px; margin-bottom:8px; background:#fafafa; }
+  .spare .st { font-weight:bold; font-size:11px; color:#555; }
+  .spare .ss { font-size:10px; margin:3px 0; }
+  .warn { background:#fff8e1; border:1.5px solid #e0a800; border-radius:7px; padding:8px 11px; font-size:10px; margin-top:6px; }
+  .warn b { color:#b5301a; }
+  strong.hl { background:#fff3b0; padding:0 2px; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 : 관계 시각화 ============ -->
+<div class="page">
+  <h1>한눈에 보기 — 기존 정부 AI 사업 vs 14분임 「K-버티컬 AI 육성사업」</h1>
+  <div class="sub">14분임이 새로 하려는 4개 사업 중 <b>대부분이 이미 굴러가는 기존 사업과 겹칩니다.</b> 무엇이 겹치고 무엇이 새 것인지 보여줍니다. (예산: 백만원)</div>
+
+  <h2>① 이미 운영 중인 정부 AI 사업 (개발 → 평가 → 상용화·확산 → 도입)</h2>
+  <div class="lane-label">아래 흐름이 이미 존재합니다 ▼</div>
+  <div class="pipe">
+    <div class="pbox"><div class="t">독파모 · 특파모</div><div class="d">국산 AI <b>모델 개발</b><br>(특파모 = 산업특화=버티컬)</div><div class="yr">과기정통부 · 2025</div></div>
+    <div class="arrow">→</div>
+    <div class="pbox"><div class="t">독파모 단계평가</div><div class="d">국산모델 <b>성능 평가</b><br>"글로벌 대비 95%" 기준 선별</div><div class="yr">2,136억 · 2025~</div></div>
+    <div class="arrow">→</div>
+    <div class="pbox"><div class="t">AX-Sprint</div><div class="d">AI제품 <b>상용화·확산</b><br><b>수요기업 91% 연계</b></div><div class="yr">7,540억 · 2026</div></div>
+    <div class="arrow">→</div>
+    <div class="pbox"><div class="t">AI 바우처</div><div class="d">수요기업 <b>AI 도입 지원</b><br>(비용 직접 보조)</div><div class="yr">NIPA · 2022~</div></div>
+  </div>
+
+  <div class="downnote">↓ 그 위에 14분임이 새로 얹으려는 4개 사업 (2027, 총 3,664) ↓</div>
+
+  <h2>② 14분임 사업 — 색이 곧 '겹침 정도'</h2>
+  <div class="grid4">
+    <div class="nbox dup"><div class="t">① 수요발굴·연계</div><div class="bud">21.1</div><div>현장 수요–개발기업 매칭</div><div class="ov">🔴 <b>AX-Sprint</b>(91% 수요연계)와 겹침</div></div>
+    <div class="nbox new"><div class="t">② 플랫폼 KOSMOS</div><div class="bud">596.2</div><div>국산 오픈소스 모델 저장·공유</div><div class="ov">🟢 <b>상대적 신규</b> (기존 특화 저장소 없음)</div></div>
+    <div class="nbox part"><div class="t">③ 평가체계</div><div class="bud">2,899 <span style="font-size:8px">(평가셋 2,450=전체 2/3)</span></div><div>완성 모델 <b>채점</b>용 정답셋</div><div class="ov">🟡 <b>독파모 평가</b>와 부분 겹침(특화는 신규)</div></div>
+    <div class="nbox dup"><div class="t">④ 확산 지원</div><div class="bud">147.8</div><div>박람회·사례집·영상</div><div class="ov">🔴 <b>AX-Sprint</b>(상용화·확산)와 겹침</div></div>
+  </div>
+
+  <div class="legend">
+    <span><i class="chip" style="background:#fdecea;border-color:#e0503a;"></i> 🔴 기존 사업과 겹침(중복)</span>
+    <span><i class="chip" style="background:#fff6e0;border-color:#e0a800;"></i> 🟡 부분 겹침</span>
+    <span><i class="chip" style="background:#e8f7ee;border-color:#2ea560;"></i> 🟢 상대적 신규</span>
+  </div>
+
+  <div class="keybox">
+    <div class="h">📌 핵심 메시지 (팀원용 한 문장)</div>
+    AI <b>개발·평가·수요연계·상용화</b>는 이미 기존 사업들이 하고 있습니다. 14분임 <b>예산의 2/3(평가셋 2,450)</b>는 독파모가 하는 평가와 겹치고, <b>수요연계·확산은 AX-Sprint</b>와 겹칩니다. 정말 새로운 건 <b>KOSMOS 저장소 하나뿐</b>인데, 정작 <b>"이 사업으로 AI 도입이 늘었는지" 재는 성과지표는 없습니다.</b>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 : 질문 목록 ============ -->
+<div class="page">
+  <h1>우리 질문 목록 (던지는 순서대로)</h1>
+  <div class="sub">상대 = 14분임 「K-버티컬 AI 육성사업」. <b>질문1(발판) → 질문2(결정타)</b> 순서로. 무슨 답이 나와도 "성과를 못 잰다"로 몰아가기.</div>
+
+  <div class="q q1">
+    <span class="tag">질문 1 · 먼저 던짐 · 발판</span> <b>"평가에 예산 2/3를 왜 몰아넣나?"</b>
+    <div class="say">"전체 예산의 약 <strong class="hl">3분의 2(2,450백만원)</strong>를 'AI 채점용 데이터셋' 한 항목에 쓰십니다. 개발기업은 개발 단계에서 이미 성능을 검증받고, 플랫폼에 올릴 때도 별도 검수를 또 거칩니다. 기업 자체 평가를 쓰거나 정부의 '독자 AI 모델 프로젝트' 평가체계를 참고할 수도 있고, AX-Sprint는 <strong class="hl">수요기업의 91%</strong>를 이미 연결하고 있습니다. 그렇다면 <b>(a)</b> 기존 검증·평가와 겹치지 않는 근거, <b>(b)</b> 예산 3분의 2를 100% 국비로 매년 새로 만드는 이유, <b>(c)</b> 그 혜택이 개발기업에 돌아가는데 공공 환원은 어떻게 담보하는지 설명해 주십시오."</div>
+    <div class="why">🎯 <b>취지</b>: 예산이 채점데이터 한 곳에 쏠렸고 · 비슷한 걸 이미 다른 사업이 하며 · 100% 나랏돈인데 혜택은 민간이 가져간다.</div>
+    <div class="reb">🛡️ 상대 "우리는 산업특화라 다르다" → <b>"겹치지 않는 부분은 좁은데 그게 예산 2/3를 정당화합니까?"</b> (→질문2로) · 상대 "공개해 환원" → <b>"핵심 평가셋은 비공개라 쓰셨는데, 공개분만 환원이면 대부분 기업 몫 아닙니까?"</b></div>
+  </div>
+
+  <div class="q q2">
+    <span class="tag">질문 2 · 마무리 · ⭐결정타</span> <b>"그래서 성과를 어떻게 측정하나?"</b>
+    <div class="say">"사업이 필요한 이유로 'AI 도입률 30.6%, 국산 채택률 41.3%'라는 낮은 수치를 근거로 드셨습니다. 그런데 5년 성과목표엔 '등록 모델 수·박람회 방문 기업 수·만족도'만 있고, 정작 문제로 지적한 <strong class="hl">그 도입률·채택률을 올리겠다는 목표는 없습니다.</strong> 3,664백만원을 써서 이 수치가 <b>실제로 오르는지는 무엇으로 확인</b>합니까?"</div>
+    <div class="why">🎯 <b>취지</b>: 자기가 '문제'라고 든 숫자를, 해결됐는지 재는 목표로는 안 넣음 → <b>성공 여부를 판단할 방법이 없음</b>(문서 내부 모순, 반박 불가).</div>
+    <div class="reb">🛡️ 상대 "등록 모델 늘면 도입도 는다" → <b>"그 인과를 재는 지표가 보고서에 없습니다. 예산 성과평가는 무엇으로 합니까?"</b></div>
+  </div>
+
+  <div class="combo">🔑 <b>두 질문은 한 세트</b> — 질문1로 '편중·중복' 방어에 묶고, 질문2로 <b>'그래서 도입률 오르는 건 안 잰다'</b> 결정타.</div>
+
+  <div class="spare">
+    <div class="st">예비 ③ — "진짜 장벽이 '정보'가 맞나?" ★강력 (시간 남으면/다른 팀원)</div>
+    <div class="ss">"AI 도입 부진의 진짜 원인이 '정보 부재'가 맞습니까? 정보가 있어도 <b>비용 부담·자체 데이터 부족</b>으로 못 하는 경우가 큰데, 수요기업 비용을 직접 덜어주는 <b>기존 AI 바우처</b> 대비 플랫폼이 도입을 더 늘린다는 근거는?"</div>
+  </div>
+  <div class="spare">
+    <div class="st">예비 ④ — 플랫폼을 새로 만들 당위성 (예비③과 묶어서)</div>
+    <div class="ss">"AX-Sprint 등이 이미 있는데, 새 플랫폼(KOSMOS)만의 차별성과 대체 불가능한 이유는?"</div>
+  </div>
+
+  <div class="warn">⚠️ <b>하지 말 것</b>: ① <b>"개발비 0원"</b> 언급 금지(→"개발은 타 사업 담당"으로 역공). ② <b>"명백한 중복"</b> 단정 금지(→"산업특화라 다르다"), 대신 "겹치지 않는 근거가 뭐냐" 질문형. ③ 상대의 <b>계산식·단가</b>(기능점수·감리비)는 건드리지 말 것 — 상대가 제일 잘 준비한 부분.</div>
+</div>
+
+</body>
+</html>
