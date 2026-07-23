@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>붙임X — (가칭)「운동베프」 장애인 스포츠 원스톱 플랫폼 구축[안]</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: '함초롬바탕', '맑은 고딕', 'Malgun Gothic', '나눔명조', serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+  }
+
+  /* ── 헤더 (배지 + 제목) ─────────────────────────── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+
+  .badge {
+    background-color: #E05A2B;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+
+  .title {
+    font-size: 15pt;
+    font-weight: bold;
+    letter-spacing: -0.3px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1.5px solid #000;
+    margin-bottom: 14px;
+  }
+
+  /* ── 섹션 헤더 ───────────────────────────────────── */
+  .section-title {
+    font-size: 11.5pt;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  /* ── 개요 소항목 ─────────────────────────────────── */
+  .bullet-list {
+    list-style: none;
+    padding-left: 4px;
+    margin-bottom: 8px;
+  }
+
+  .bullet-list li {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 5px;
+    padding-left: 6px;
+    line-height: 1.65;
+  }
+
+  .bullet-mark {
+    flex-shrink: 0;
+    font-size: 10.5pt;
+  }
+
+  .bullet-key {
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  /* ── 세부 운영계획 표 ─────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 10pt;
+  }
+
+  td {
+    border: 1px solid #000;
+    padding: 6px 10px;
+    vertical-align: middle;
+    line-height: 1.6;
+  }
+
+  .row-header {
+    background-color: #D4D4D4;
+    font-weight: bold;
+    text-align: center;
+    width: 14%;
+    white-space: nowrap;
+  }
+
+  .row-content {
+    background-color: #fff;
+    text-align: left;
+  }
+
+  /* ── iPhone UI 그리드 ───────────────────────────── */
+  .ui-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    margin-top: 8px;
+    align-items: start;
+  }
+
+  /* 폰 외곽 프레임 */
+  .iphone-wrap { display: flex; flex-direction: column; align-items: center; }
+
+  .iphone {
+    width: 100%;
+    background: #1C1C1E;
+    border-radius: 18px;
+    padding: 5px 4px 4px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.45),
+                inset 0 0 0 1px rgba(255,255,255,0.08);
+    position: relative;
+  }
+  /* 전원/볼륨 버튼 효과 */
+  .iphone::before {
+    content: '';
+    position: absolute;
+    left: -3px; top: 22%;
+    width: 2.5px; height: 12%;
+    background: #3A3A3C;
+    border-radius: 2px 0 0 2px;
+  }
+  .iphone::after {
+    content: '';
+    position: absolute;
+    right: -3px; top: 28%;
+    width: 2.5px; height: 10%;
+    background: #3A3A3C;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .iphone-screen {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 다이나믹 아일랜드 */
+  .dynamic-island {
+    background: #1C1C1E;
+    width: 38%;
+    height: 8px;
+    border-radius: 0 0 8px 8px;
+    margin: 0 auto 2px;
+  }
+
+  /* 상태바 */
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px 2px;
+    font-size: 5pt;
+    font-weight: 700;
+    background: #fff;
+    font-family: -apple-system, 'SF Pro', 'Malgun Gothic', sans-serif;
+  }
+  .status-icons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 4.8pt;
+  }
+  .battery-icon {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 1.5px;
+    padding: 0.5px 1px;
+    gap: 0.5px;
+    height: 6px;
+    position: relative;
+  }
+  .battery-fill {
+    background: #3A3A3C;
+    height: 100%;
+    width: 10px;
+    border-radius: 1px;
+  }
+
+  /* 앱 네비게이션 바 */
+  .app-bar {
+    background: #5D8931;
+    color: #fff;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 6.5pt;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+  }
+
+  /* 앱 본문 (iOS 회색 배경) */
+  .iphone-body {
+    height: 210px;
+    overflow: hidden;
+    padding: 5px 5px 3px;
+    background: #F2F2F7;
+    font-size: 6pt;
+    line-height: 1.45;
+  }
+
+  /* 홈 인디케이터 */
+  .home-bar {
+    text-align: center;
+    padding: 3px 0 3px;
+    background: #F2F2F7;
+  }
+  .home-pill {
+    display: inline-block;
+    background: #3C3C3E;
+    width: 30%;
+    height: 2.5px;
+    border-radius: 2px;
+  }
+
+  /* 폰 번호 레이블 */
+  .iphone-label {
+    text-align: center;
+    font-size: 6.5pt;
+    font-weight: bold;
+    color: #3A6B1A;
+    margin-top: 5px;
+    line-height: 1.35;
+  }
+
+  /* ─── iOS UI 컴포넌트 ─────────────────────────── */
+
+  /* 검색창 */
+  .ios-search {
+    background: #fff;
+    border-radius: 8px;
+    padding: 3px 6px;
+    color: #8E8E93;
+    font-size: 5.8pt;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  /* 세그먼트 컨트롤 */
+  .ios-segment {
+    display: flex;
+    background: #D1D1D6;
+    border-radius: 7px;
+    padding: 1.5px;
+    margin-bottom: 4px;
+    gap: 1px;
+  }
+  .ios-seg {
+    flex: 1;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 5px;
+    font-size: 5pt;
+    font-weight: 600;
+    color: #3C3C3E;
+  }
+  .ios-seg.on {
+    background: #5D8931;
+    color: #fff;
+  }
+
+  /* 카드 */
+  .ios-card {
+    background: #fff;
+    border-radius: 9px;
+    padding: 5px 6px;
+    margin-bottom: 3px;
+  }
+  .ios-card-name {
+    font-size: 6.2pt;
+    font-weight: 700;
+    color: #1C1C1E;
+  }
+  .ios-card-sub {
+    font-size: 5.2pt;
+    color: #636366;
+    margin-top: 1px;
+  }
+  .ios-tag {
+    display: inline-block;
+    background: #DBF4D8;
+    color: #3A6B1A;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 5pt;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .ios-btn-sm {
+    display: inline-block;
+    background: #5D8931;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 5pt;
+    font-weight: 700;
+    float: right;
+  }
+
+  /* 잔액 그라데이션 카드 */
+  .ios-balance {
+    background: linear-gradient(135deg, #3A6B1A 0%, #5D8931 50%, #AED383 100%);
+    border-radius: 10px;
+    padding: 7px 8px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .ios-bal-label { font-size: 5.2pt; opacity: 0.85; }
+  .ios-bal-amt   { font-size: 13pt;  font-weight: 700; letter-spacing: -0.5px; }
+  .ios-bal-sub   { font-size: 4.8pt; opacity: 0.8; margin-top: 1px; }
+
+  /* 리스트 그룹 */
+  .ios-list { background: #fff; border-radius: 9px; overflow: hidden; margin-bottom: 4px; }
+  .ios-list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 7px;
+    font-size: 5.8pt;
+    border-bottom: 0.5px solid #E5E5EA;
+  }
+  .ios-list-row:last-child { border-bottom: none; }
+  .ios-list-key { color: #636366; }
+  .ios-list-val { font-weight: 600; color: #1C1C1E; }
+  .ios-list-val.green { color: #3A6B1A; font-size: 7pt; }
+
+  /* 메인 버튼 */
+  .ios-btn {
+    display: block;
+    background: #5D8931;
+    color: #fff;
+    text-align: center;
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 6.5pt;
+    font-weight: 700;
+  }
+
+  /* 달력 */
+  .ios-cal {
+    background: #fff;
+    border-radius: 9px;
+    padding: 5px 5px 3px;
+    margin-bottom: 4px;
+  }
+  .ios-cal-hd {
+    text-align: center;
+    font-size: 6pt;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin-bottom: 3px;
+  }
+  .ios-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 5pt;
+    gap: 1px;
+  }
+  .cg-lbl { color: #636366; font-weight: 600; padding-bottom: 1px; }
+  .cg-d   { padding: 1px 0; color: #1C1C1E; }
+  .cg-sel {
+    background: #5D8931;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+  .cg-dot {
+    color: #3A6B1A;
+    font-weight: 700;
+  }
+
+  /* 시간 슬롯 */
+  .ios-timelist { background: #fff; border-radius: 9px; overflow: hidden; margin-bottom: 4px; }
+  .ios-time-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 7px;
+    font-size: 5.8pt;
+    border-bottom: 0.5px solid #E5E5EA;
+  }
+  .ios-time-row:last-child { border-bottom: none; }
+  .ios-radio {
+    width: 9px; height: 9px;
+    border: 1.5px solid #C7C7CC;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .ios-radio.on {
+    background: #5D8931;
+    border-color: #5D8931;
+    box-shadow: inset 0 0 0 2px #fff;
+  }
+  .time-badge {
+    margin-left: auto;
+    background: #DBF4D8;
+    color: #3A6B1A;
+    font-size: 5pt;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  /* 챗 말풍선 */
+  .chat-area { display: flex; flex-direction: column; gap: 3px; }
+  .bubble-bot {
+    background: #fff;
+    border-radius: 4px 10px 10px 10px;
+    padding: 4px 5px;
+    font-size: 5.8pt;
+    max-width: 88%;
+    align-self: flex-start;
+    line-height: 1.4;
+    color: #1C1C1E;
+  }
+  .bubble-user {
+    background: #5D8931;
+    color: #fff;
+    border-radius: 10px 4px 10px 10px;
+    padding: 4px 5px;
+    font-size: 5.8pt;
+    max-width: 80%;
+    align-self: flex-end;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .chat-chip {
+    display: inline-block;
+    background: #DBF4D8;
+    color: #3A6B1A;
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-size: 5pt;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .chat-timestamp {
+    font-size: 4.5pt;
+    color: #AEAEB2;
+    text-align: center;
+    margin: 2px 0;
+  }
+
+  /* 리뷰 / 마일리지 */
+  .ios-reward {
+    background: linear-gradient(135deg, #DBF4D8, #F0FFE9);
+    border: 1px solid #AED383;
+    border-radius: 9px;
+    padding: 5px 7px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .ios-reward-ico  { font-size: 11pt; }
+  .ios-reward-txt  { font-size: 5.5pt; color: #3A6B1A; font-weight: 700; margin-top: 1px; }
+  .ios-reward-sub  { font-size: 5pt; color: #636366; margin-top: 1px; }
+
+  .ios-stars { color: #FFD60A; font-size: 10pt; letter-spacing: 2px; text-align: center; margin: 4px 0 3px; }
+
+  .ios-textarea {
+    background: #fff;
+    border-radius: 9px;
+    padding: 5px 7px;
+    font-size: 5.5pt;
+    color: #8E8E93;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    min-height: 22px;
+  }
+
+  /* ── 인쇄 배경색 강제 출력 ───────────────────────── */
+  @media print {
+    body { padding: 0; width: 100%; }
+    .badge, .app-bar, .ios-btn, .ios-btn-sm, .ios-balance,
+    .ios-tag, .chat-chip, .bubble-user, .ios-seg.on,
+    .ios-reward, .ios-bal-amt, .cg-sel, .ios-radio.on,
+    .iphone { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .row-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── 헤더 ── -->
+<div class="header">
+  <span class="badge">붙임X</span>
+  <span class="title">(가칭)「운동베프」 장애인 스포츠 원스톱 플랫폼 구축[안]</span>
+</div>
+<hr class="divider">
+
+<!-- ── 개요 ── -->
+<p class="section-title">□ 개요</p>
+<ul class="bullet-list">
+  <li>
+    <span class="bullet-mark">○</span>
+    <span><span class="bullet-key">(개념)</span> 장애인 생활체육 정보 검색·바우처 결제·체력인증 예약을 하나의 플랫폼에서 처리하는 AI 챗봇 기반 원스톱 서비스</span>
+  </li>
+  <li>
+    <span class="bullet-mark">○</span>
+    <span><span class="bullet-key">(배경)</span> 현재 장애인 생활체육 관련 서비스가 3개 기관·플랫폼으로 분산 운영되어 매 서비스마다 별도 로그인·탐색 필요, 유령 가맹시설(749곳/2,256개, 33.2%) 방치로 이용자 신뢰도 훼손</span>
+  </li>
+  <li>
+    <span class="bullet-mark">○</span>
+    <span><span class="bullet-key">(기대효과)</span> 단일 플랫폼으로 접근성·편의성 향상, 가맹점 데이터 통합 관리로 허위 가맹 정보 제거 및 장애인 생활체육 참여율 제고</span>
+  </li>
+</ul>
+
+<!-- ── 세부 운영계획 ── -->
+<p class="section-title">□ 세부 운영계획</p>
+<table>
+  <tr>
+    <td class="row-header">시행주체</td>
+    <td class="row-content">문화체육관광부(주관) · 국민체육진흥공단·대한장애인체육회(운영)</td>
+  </tr>
+  <tr>
+    <td class="row-header">대상</td>
+    <td class="row-content">장애인 생활체육 참여자 및 가맹 체육시설</td>
+  </tr>
+  <tr>
+    <td class="row-header">주요 기능</td>
+    <td class="row-content">
+      ① AI 챗봇 24시간 수요자 맞춤 상담 &nbsp; ② 프로그램·시설 통합 검색 및 예약 &nbsp; ③ 바우처 간편결제<br>
+      ④ 이용자 리뷰·피드백 &amp; 마일리지 적립 &nbsp; ⑤ 보조장비 허브 렌탈
+    </td>
+  </tr>
+  <tr>
+    <td class="row-header">운영방식</td>
+    <td class="row-content">
+      ▶<strong>통합 검색·예약</strong>: 프로그램·시설·체력인증센터 실시간 검색 및 예약 연동<br>
+      ▶<strong>AI 챗봇</strong>: 24시간 장애유형별 맞춤 프로그램·시설 안내<br>
+      ▶<strong>바우처 결제</strong>: 간편결제 통합 (온·오프라인 동시 지원, 현장 카드 결제 포함)<br>
+      ▶<strong>가맹점 관리</strong>: 주기적 정보 모니터링 (바우처 불가·유령 가맹시설 즉시 제외)<br>
+      ▶<strong>리뷰·마일리지</strong>: 이용자 리뷰·피드백 기능 탑재, 리뷰 작성 시 포인트 적립<br>
+      ▶<strong>보조장비 허브</strong>: 광역별 반다비센터 1개소를 허브로 지정, 장비 보유현황 실시간 공개 및 스포츠 휠체어·러닝 블레이드 등 고단가 보조기기 렌탈·광역 내 순환 공유
+    </td>
+  </tr>
+  <tr>
+    <td class="row-header">해외사례</td>
+    <td class="row-content">
+      <strong>싱가포르 ActiveSG</strong> — 장애인 친화시설 필터 검색부터 강좌 수강 신청·바우처 즉시 결제까지 원스톱 처리 (시민·PR 190만 명 가입)<br>
+      &nbsp;* 장애인 스포츠 참여율 목표: 2023년 46% → 2030년 70% (Disability Sports Master Plan 2024)
+    </td>
+  </tr>
+  <tr>
+    <td class="row-header">성과지표</td>
+    <td class="row-content">
+      ▶<strong>이용자 규모</strong>: 플랫폼 연간 신규 가입자 수 / 월간 활성 이용자 수(MAU)<br>
+      ▶<strong>데이터 품질</strong>: 유령 가맹시설 비율 ('22년 33.2% → '28년 5% 이하 목표)<br>
+      ▶<strong>바우처 편의성</strong>: 간편결제 이용 건수 및 이용자 만족도(5점 척도)<br>
+      ▶<strong>보조장비 활용</strong>: 광역별 보조장비 허브 월간 렌탈 건수<br>
+      ▶<strong>참여 지속성</strong>: 리뷰 작성률 및 마일리지 사용 건수<br>
+      ▶<strong>참여율</strong>: 장애인 생활체육 참여율 ('25년 34.8% → '28년 40% 목표)
+    </td>
+  </tr>
+  <tr>
+    <td class="row-header">추진계획</td>
+    <td class="row-content">
+      ▶<strong>'26 下</strong> 설계·개발 착수: 기능 요건 정의·데이터 연동 설계, 보조장비 허브 지정 기준·렌탈 운영 지침 마련<br>
+      ▶<strong>'27 上</strong> 시범 운영: 수도권 3개 광역 시범 서비스, 보조장비 허브 3개소 시범 지정<br>
+      ▶<strong>'27 下</strong> 전국 확대: 17개 전 광역 서비스 개시, 보조장비 허브 17개소 전국 지정<br>
+      ▶<strong>'28 上</strong> 성과 평가·고도화: 이용 데이터 기반 AI 챗봇·추천 기능 고도화, 유령 가맹시설 정기 점검 체계 제도화
+    </td>
+  </tr>
+</table>
+
+<!-- ── 주요 기능 UI 화면 ── -->
+<p class="section-title">□ 주요 기능 UI 화면 구성</p>
+<div class="ui-grid">
+
+  <!-- 0 로그인·메인 화면 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="iphone-body" style="height:229px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0">
+          <!-- 앱 타이틀 -->
+          <div style="font-size:8.5pt;font-weight:900;color:#3A6B1A;letter-spacing:-0.5px;margin-bottom:1px">운동베프</div>
+          <div style="font-size:4.5pt;color:#8E8E93;margin-bottom:6px;text-align:center">장애인 스포츠 통합 플랫폼</div>
+          <!-- 반다비 픽셀 아트 -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 70" width="52" height="74" style="display:block">
+            <!-- 모자 스트라이프 -->
+            <rect x="16" y="1" width="16" height="4" rx="1" fill="#E53935"/>
+            <rect x="16" y="5" width="16" height="3" fill="#fff"/>
+            <rect x="16" y="8" width="16" height="3" fill="#1E88E5"/>
+            <rect x="16" y="11" width="16" height="3" fill="#43A047"/>
+            <!-- 모자 챙 -->
+            <rect x="10" y="13" width="28" height="5" rx="2" fill="#111827"/>
+            <!-- 귀 -->
+            <rect x="5" y="17" width="10" height="10" rx="5" fill="#0d0d1e"/>
+            <rect x="33" y="17" width="10" height="10" rx="5" fill="#0d0d1e"/>
+            <!-- 머리 -->
+            <rect x="8" y="17" width="32" height="28" rx="12" fill="#0d0d1e"/>
+            <!-- 얼굴 밝은 부분 -->
+            <ellipse cx="24" cy="36" rx="10" ry="8" fill="#263238"/>
+            <!-- 눈 (픽셀) -->
+            <rect x="13" y="27" width="7" height="7" rx="3.5" fill="#030712"/>
+            <rect x="28" y="27" width="7" height="7" rx="3.5" fill="#030712"/>
+            <!-- 눈 하이라이트 -->
+            <rect x="15" y="28" width="2" height="2" fill="#fff"/>
+            <rect x="30" y="28" width="2" height="2" fill="#fff"/>
+            <!-- 코 -->
+            <rect x="20" y="34" width="8" height="5" rx="2.5" fill="#030712"/>
+            <!-- 몸통 -->
+            <rect x="9" y="46" width="30" height="22" rx="11" fill="#0d0d1e"/>
+            <!-- 가슴 초승달 -->
+            <path d="M 15 56 Q 24 49 33 56 Q 29 67 15 56" fill="#fff"/>
+            <!-- 왼팔 (들어올림) -->
+            <rect x="0" y="36" width="8" height="18" rx="4" fill="#0d0d1e" transform="rotate(-38,4,45)"/>
+            <!-- 오른팔 -->
+            <rect x="40" y="47" width="8" height="16" rx="4" fill="#0d0d1e" transform="rotate(12,44,55)"/>
+          </svg>
+          <!-- 로그인 버튼 -->
+          <div style="margin-top:6px;width:82%;background:#5D8931;color:#fff;border-radius:9px;padding:5px;text-align:center;font-size:6pt;font-weight:700">시작하기</div>
+          <div style="margin-top:3px;font-size:4.3pt;color:#AEAEB2;text-align:center">장애인복지카드로 간편 인증</div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">⓪ 메인·로그인<br>화면</div>
+  </div>
+
+  <!-- ① AI 챗봇 상담 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="app-bar">🤖 AI 맞춤 상담</div>
+        <div class="iphone-body">
+          <div class="chat-area">
+            <div class="chat-timestamp">오전 9:41</div>
+            <div class="bubble-bot">안녕하세요! 😊<br>장애유형과 원하시는 운동을 알려주세요.</div>
+            <div class="bubble-user">지체장애 2급,<br>수영 찾아요</div>
+            <div class="bubble-bot">근처 수영 프로그램 3곳 안내해드려요!<br><span class="chat-chip">바로 예약하기 ▶</span></div>
+            <div class="bubble-user">바우처 쓸 수 있어요?</div>
+            <div class="bubble-bot">모두 바우처 가능 시설이에요 ✅<br><span class="chat-chip">결제 바로가기 ▶</span></div>
+          </div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">① AI 챗봇<br>24시간 상담</div>
+  </div>
+
+  <!-- ② 프로그램·시설 통합 검색 및 예약 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="app-bar">🔍 시설·프로그램 검색 및 예약</div>
+        <div class="iphone-body">
+          <div class="ios-search">🔍 &nbsp;장애유형·지역·종목 검색</div>
+          <div class="ios-segment">
+            <div class="ios-seg on">지체</div>
+            <div class="ios-seg">시각</div>
+            <div class="ios-seg">청각</div>
+            <div class="ios-seg">발달</div>
+          </div>
+          <div class="ios-card">
+            <span class="ios-btn-sm">예약▶</span>
+            <div class="ios-card-name">📍 반다비센터 강동</div>
+            <div class="ios-card-sub">수영·요가 | 강동구</div>
+            <span class="ios-tag">✅ 바우처 가능</span>
+          </div>
+          <div class="ios-card">
+            <span class="ios-btn-sm">예약▶</span>
+            <div class="ios-card-name">📍 장애인체력센터</div>
+            <div class="ios-card-sub">체력측정 | 마포구</div>
+            <span class="ios-tag">✅ 바우처 가능</span>
+          </div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">② 프로그램·시설<br>통합 검색 및 예약</div>
+  </div>
+
+  <!-- ③ 바우처 간편결제 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="app-bar">💳 바우처 결제</div>
+        <div class="iphone-body">
+          <div class="ios-balance">
+            <div class="ios-bal-label">잔여 이용권</div>
+            <div class="ios-bal-amt">45,000원</div>
+            <div class="ios-bal-sub">만료 2026.12.31</div>
+          </div>
+          <div class="ios-list">
+            <div class="ios-list-row">
+              <span class="ios-list-key">시설</span>
+              <span class="ios-list-val">반다비센터 강동</span>
+            </div>
+            <div class="ios-list-row">
+              <span class="ios-list-key">프로그램</span>
+              <span class="ios-list-val">수중재활</span>
+            </div>
+            <div class="ios-list-row">
+              <span class="ios-list-key">일시</span>
+              <span class="ios-list-val">7.10(목) 10:00</span>
+            </div>
+            <div class="ios-list-row">
+              <span class="ios-list-key">결제금액</span>
+              <span class="ios-list-val green">20,000원</span>
+            </div>
+          </div>
+          <div class="ios-btn">바우처로 결제</div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">③ 바우처<br>간편결제</div>
+  </div>
+
+  <!-- ④ 리뷰·마일리지 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="app-bar">⭐ 리뷰 &amp; 마일리지</div>
+        <div class="iphone-body">
+          <div class="ios-card" style="margin-bottom:4px">
+            <div class="ios-card-name">반다비센터 강동</div>
+            <div class="ios-card-sub">수중재활 · 7.10(목) 수강 완료 ✅</div>
+          </div>
+          <div class="ios-stars">★★★★★</div>
+          <div class="ios-textarea">한 줄 리뷰 남기기 (접근성·시설·강사)</div>
+          <div class="ios-reward" style="padding:3px 7px;display:flex;align-items:center;gap:4px;justify-content:center">
+            <span class="ios-reward-ico" style="font-size:8pt">🎁</span>
+            <span class="ios-reward-txt">리뷰 작성 시 100P 즉시 적립 · 현재 350P</span>
+          </div>
+          <div class="ios-btn">리뷰 제출하기</div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">④ 이용자 리뷰·<br>마일리지 적립</div>
+  </div>
+
+  <!-- ⑤ 보조장비 허브 렌탈 -->
+  <div class="iphone-wrap">
+    <div class="iphone">
+      <div class="iphone-screen">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>WiFi</span><span>▐▌</span></div>
+        </div>
+        <div class="app-bar">🏋 보조장비 렌탈</div>
+        <div class="iphone-body">
+          <div class="ios-search">📍 &nbsp;내 위치 기반 허브 검색</div>
+          <div class="ios-segment">
+            <div class="ios-seg on">전체</div>
+            <div class="ios-seg">휠체어</div>
+            <div class="ios-seg">블레이드</div>
+            <div class="ios-seg">기타</div>
+          </div>
+          <div class="ios-card" style="margin-bottom:3px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div class="ios-card-name">🏠 강동 반다비 허브</div>
+              <span style="font-size:5pt;color:#636366">2.4km</span>
+            </div>
+            <div class="ios-card-sub" style="margin-bottom:3px">강동구 성내동 · 광역 대표 보조장비 허브</div>
+            <div style="background:#F2F2F7;border-radius:6px;padding:3px 5px;font-size:5.5pt">
+              <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid #E5E5EA">
+                <span>🦽 스포츠 휠체어</span>
+                <span style="color:#3A6B1A;font-weight:700">2대 가능</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid #E5E5EA">
+                <span>🦿 러닝 블레이드</span>
+                <span style="color:#3A6B1A;font-weight:700">1개 가능</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:2px 0">
+                <span>🏊 수중 보조기기</span>
+                <span style="color:#E05A2B;font-weight:700">대여 중</span>
+              </div>
+            </div>
+            <span class="ios-btn-sm" style="margin-top:4px;float:none;display:block;text-align:center">렌탈 신청 ▶</span>
+          </div>
+        </div>
+        <div class="home-bar"><div class="home-pill"></div></div>
+      </div>
+    </div>
+    <div class="iphone-label">⑤ 보조장비 허브<br>렌탈 서비스</div>
+  </div>
+
+</div><!-- /ui-grid -->
+
+</body>
+</html>
